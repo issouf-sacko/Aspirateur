@@ -13,7 +13,7 @@ class AspiratorTest {
 	void testChangeOrientation() {
 		Aspirateur asp = new Aspirateur(5, 6, 'S');
 		asp.pivoterAspirateur('G');
-		assertEquals('E', asp.getOriatation());
+		assertEquals('E', asp.getOrientation());
 	}
 	
 	
@@ -35,7 +35,7 @@ class AspiratorTest {
 	void testVerifOrientation() {
 		
 		Aspirateur asp = new Aspirateur(5, 6, 'N');
-		boolean verif = asp.verifOrientation(asp.getOriatation());
+		boolean verif = asp.verifOrientation(asp.getOrientation());
 		assertEquals(true, verif);
 	}
 	

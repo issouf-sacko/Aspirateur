@@ -8,8 +8,8 @@ public class Grille {
 	private int nbColonne;
 	private int nbLigne;
 
-	private Aspirateur[][] grille;
-	private Aspirateur aspirator;
+	private Aspirateur[][] grille; // tableau d'aspirateur 
+	private Aspirateur aspirateur;
 
 	public static HashSet<Character> lesCommandes = new HashSet<Character>();
 
@@ -24,7 +24,7 @@ public class Grille {
 		this.nbColonne = nbCol;
 		this.nbLigne = nbLingne;
 
-		this.aspirator = new Aspirateur(0, 0, 'N');
+		this.aspirateur = new Aspirateur(0, 0, 'N');
 
 		this.grille = new Aspirateur[nbColonne][nbLigne];
 
@@ -47,11 +47,11 @@ public class Grille {
 	}
 
 	public Aspirateur getAspirator() {
-		return aspirator;
+		return aspirateur;
 	}
 
 	public void setAspirator(Aspirateur aspirator) {
-		this.aspirator = aspirator;
+		this.aspirateur = aspirator;
 	}
 
 	public Aspirateur[][] getGrille() {
@@ -68,7 +68,7 @@ public class Grille {
 		instruction = instruction.toUpperCase();
 		boolean verif = false;
 		try {
-			if (verifAllCommande(instruction) == true) {
+			if (verifAllCommande(instruction)) {
 				for (int i = 0; i < instruction.length(); i++) {
 
 					moveAspirator(instruction.charAt(i));
@@ -95,35 +95,35 @@ public class Grille {
 
 			if (cmd == 'A') {
 
-				switch (this.aspirator.getOriatation()) {
+				switch (this.aspirateur.getOrientation()) {
 				case 'N':
-					if (this.aspirator.getY() < this.nbLigne)
-						this.aspirator.setY(this.aspirator.getY() + 1);
+					if (this.aspirateur.getY() < this.nbLigne)
+						this.aspirateur.setY(this.aspirateur.getY() + 1);
 					break;
 				case 'S':
-					if (this.aspirator.getY() > 0)
-					this.aspirator.setY(this.aspirator.getY() - 1);
+					if (this.aspirateur.getY() > 0)
+					this.aspirateur.setY(this.aspirateur.getY() - 1);
 					break;
 				case 'W':
-					if (this.aspirator.getX() < this.nbColonne)
-					this.aspirator.setX(this.aspirator.getX() + 1);
+					if (this.aspirateur.getX() < this.nbColonne)
+					this.aspirateur.setX(this.aspirateur.getX() + 1);
 
 					break;
 				case 'E':
-					if (this.aspirator.getX() > 0)
-					this.aspirator.setX(this.aspirator.getX() - 1);
+					if (this.aspirateur.getX() > 0)
+					this.aspirateur.setX(this.aspirateur.getX() - 1);
 					break;
 				}
 
 			} else {
-				this.aspirator.pivoterAspirateur(cmd);
+				this.aspirateur.pivoterAspirateur(cmd);
 			}
 
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
-		return this.aspirator;
+		return this.aspirateur;
 	}
 
 	public boolean AjouterCommande(char commande) {

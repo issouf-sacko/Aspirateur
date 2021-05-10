@@ -17,7 +17,7 @@ class GrilleTest {
 		Grille gr = new Grille(10, 10);
 		assertEquals(0, gr.getAspirator().getX());
 		assertEquals(0, gr.getAspirator().getY());
-		assertEquals('N', gr.getAspirator().getOriatation());
+		assertEquals('N', gr.getAspirator().getOrientation());
 	}
 	
 	@Test
@@ -27,7 +27,7 @@ class GrilleTest {
 		gr.moveAspirator('D');
 		assertEquals(0, gr.getAspirator().getX());
 		assertEquals(1, gr.getAspirator().getY());
-		assertEquals('E', gr.getAspirator().getOriatation());
+		assertEquals('E', gr.getAspirator().getOrientation());
 	}
 	
 	@Test
@@ -37,7 +37,7 @@ class GrilleTest {
 		Aspirateur asp3 = new Aspirateur(4, 5, 'E');
 		gr.setAspirator(asp2);
 		gr.moveAspirator('D');
-		assertEquals(asp3.getOriatation(), gr.getAspirator().getOriatation());
+		assertEquals(asp3.getOrientation(), gr.getAspirator().getOrientation());
 	}
 	
 	@Test
@@ -47,7 +47,7 @@ class GrilleTest {
 		Aspirateur asp3 = new Aspirateur(4, 5, 'S');
 		gr.setAspirator(asp2);
 		gr.moveAspirator('G');
-		assertEquals(asp3.getOriatation(), gr.getAspirator().getOriatation());
+		assertEquals(asp3.getOrientation(), gr.getAspirator().getOrientation());
 	}
 
 	@Test
@@ -74,7 +74,7 @@ class GrilleTest {
 		gr.changePosition("DADADADAA");
 		assertEquals(5, gr.getAspirator().getX());
 		assertEquals(6, gr.getAspirator().getY());
-		assertEquals('N', gr.getAspirator().getOriatation());
+		assertEquals('N', gr.getAspirator().getOrientation());
 	}
 
 	@Test
@@ -83,6 +83,6 @@ class GrilleTest {
 		gr.changePosition("GGAAG");
 		assertEquals(0, gr.getAspirator().getX());
 		assertEquals(0, gr.getAspirator().getY());
-		assertEquals('E', gr.getAspirator().getOriatation());
+		assertEquals('E', gr.getAspirator().getOrientation());
 	}
 }

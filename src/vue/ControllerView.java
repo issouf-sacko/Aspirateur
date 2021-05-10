@@ -1,3 +1,4 @@
+
 package vue;
 
 import javafx.collections.FXCollections;
@@ -103,6 +104,7 @@ public class ControllerView {
 	public void SetAspirateur() {
 		String x = txtAspiX.getText();
 		String y = txtAspiY.getText();
+		// recupère l'orientation choisie dans le choiceBox
 		char orientation = choixOrientation.getSelectionModel().getSelectedItem().charAt(0);
 
 		if (x.isEmpty() || y.isEmpty()) {
@@ -141,7 +143,7 @@ public class ControllerView {
 	/**
 	 * Permet de verifier  les saisis pour créer une pièce
 	 * 
-	 * @return true if nbCollonne et nbLine sont bien saisis et correcte
+	 * @return true si nbCollonne et nbLine sont bien saisis et correcte
 	 */
 	public boolean pasErreurGrille() {
 
@@ -190,9 +192,9 @@ public class ControllerView {
 	
 	public void closeWindows() {
 		
-		 // get a handle to the stage
+		 //  recup un aperçu de la scène
 	    Stage stage = (Stage) btnClose.getScene().getWindow();
-	    // do what you have to do
+	    // fermeture de la fenêtre
 	    stage.close();
 		
 	}

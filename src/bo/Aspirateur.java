@@ -10,7 +10,7 @@ public class Aspirateur {
 
 	private int x;
 	private int y;
-	private char oriatation;
+	private char orientation;
 
 	private String angle;
 	int valDegre = 90;
@@ -33,7 +33,7 @@ public class Aspirateur {
 
 			this.x = x;
 			this.y = y;
-			this.oriatation = o;
+			this.orientation = o;
 			setAngle();
 			
 
@@ -61,12 +61,12 @@ public class Aspirateur {
 		this.y = y;
 	}
 
-	public char getOriatation() {
-		return oriatation;
+	public char getOrientation() {
+		return orientation;
 	}
 
-	public void setOriatation(char oriatation) {
-		this.oriatation = oriatation;
+	public void setOrientation(char oriatation) {
+		this.orientation = oriatation;
 	}
 
 	public char[] getPointsCardinaux() {
@@ -109,10 +109,12 @@ public class Aspirateur {
 	public String getAngle() {
 		return angle;
 	}
-
+	/**
+	 * Pivoter l'aspirateur et automatiquement son orientation aussi
+	 */
 	public void setAngle() {
 		remplirDegre();
-		switch (this.oriatation) {
+		switch (this.orientation) {
 
 		case 'E':
 			this.angle = dimAngle.get(0);
@@ -171,7 +173,7 @@ public class Aspirateur {
 		int index = dimAngle.indexOf(this.angle);
 		for (int i = 0; i < pointsCardinaux.length; i++) {
 			if (index == i) {
-				this.oriatation = pointsCardinaux[i];
+				this.orientation = pointsCardinaux[i];
 			}
 		}
 
@@ -179,7 +181,7 @@ public class Aspirateur {
 	
 	@Override
 	public String toString() {
-		return x + " " + y + " " + oriatation;
+		return x + " " + y + " " + orientation;
 	}
 
 	public boolean equals(Object anObject) {

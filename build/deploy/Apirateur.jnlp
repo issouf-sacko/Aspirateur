@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Apirateur.jnlp">
+  <information>
+    <title>Apirateur</title>
+    <vendor>aspi.vacuum</vendor>
+    <description>aspirateur</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Apirateur.jar" size="10366" download="eager" />
+    <jar href="libs\org.apiguardian_1.1.0.v20190826-0900.jar" size="16411" download="eager" />
+    <jar href="libs\org.hamcrest.core_1.3.0.v20180420-1519.jar" size="66997" download="eager" />
+    <jar href="libs\org.junit.jupiter.api_5.6.0.v20200203-2009.jar" size="181163" download="eager" />
+    <jar href="libs\org.junit.jupiter.engine_5.6.0.v20200203-2009.jar" size="233354" download="eager" />
+    <jar href="libs\org.junit.jupiter.migrationsupport_5.6.0.v20200203-2009.jar" size="44430" download="eager" />
+    <jar href="libs\org.junit.jupiter.params_5.6.0.v20200203-2009.jar" size="600849" download="eager" />
+    <jar href="libs\org.junit.platform.commons_1.6.0.v20200203-2009.jar" size="115048" download="eager" />
+    <jar href="libs\org.junit.platform.engine_1.6.0.v20200203-2009.jar" size="199971" download="eager" />
+    <jar href="libs\org.junit.platform.launcher_1.6.0.v20200203-2009.jar" size="143657" download="eager" />
+    <jar href="libs\org.junit.platform.runner_1.6.0.v20200203-2009.jar" size="34283" download="eager" />
+    <jar href="libs\org.junit.platform.suite.api_1.6.0.v20200203-2009.jar" size="31149" download="eager" />
+    <jar href="libs\org.junit.vintage.engine_5.6.0.v20200203-2009.jar" size="82142" download="eager" />
+    <jar href="libs\org.junit_4.13.0.v20200204-1500.jar" size="425413" download="eager" />
+    <jar href="libs\org.opentest4j_1.2.0.v20190826-0900.jar" size="21997" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="application.Main"  name="aspirateur" />
+  <update check="background"/>
+</jnlp>

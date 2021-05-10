@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.ControllerView">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="229.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="202.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="169.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="216.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="265.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox fx:id="hbApi" prefHeight="67.0" prefWidth="195.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
+         <children>
+            <Label prefHeight="17.0" prefWidth="82.0" text="Aspirateur">
+               <HBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="X :">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtAspiX" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="Y :">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtAspiY" prefWidth="50.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Label prefHeight="17.0" prefWidth="72.0" text="Orientation :">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="choixOrientation" prefHeight="25.0" prefWidth="75.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <Button mnemonicParsing="false" onAction="#SetAspirateur" prefHeight="25.0" prefWidth="81.0" text="Valider">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="50.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="hbGrille" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3">
+         <children>
+            <Label prefHeight="17.0" prefWidth="123.0" text="Nombre de colonne">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="80.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtGrNbColonne" prefWidth="80.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Label prefHeight="17.0" prefWidth="141.0" text="Nombre de ligne">
+               <HBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txttGrNbLigne" prefWidth="80.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#createGrid" prefWidth="100.0" text="Valider">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Label prefHeight="17.0" prefWidth="82.0" text="Pièce :">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <HBox fx:id="hbMoveAspi" prefHeight="81.0" prefWidth="600.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+         <children>
+            <Label text="Instruction :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtInstruction" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#moveAspirateur" prefHeight="25.0" prefWidth="81.0" text="Deplacer">
+               <HBox.margin>
+                  <Insets left="50.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="hbShowActualAspi" prefHeight="61.0" prefWidth="600.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <Label text="LA position actuelle de l'aspirateur :" textFill="#da0c0c">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="50.0" top="30.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="lblActuelAspirateur" prefHeight="27.0" prefWidth="120.0" text="Label" textFill="#33565c">
+               <HBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#initialize" prefHeight="25.0" prefWidth="81.0" text="Initialiser" GridPane.rowIndex="4" />
+      <Button fx:id="btnClose" mnemonicParsing="false" onAction="#closeWindows" prefHeight="25.0" prefWidth="81.0" text="Fermer" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+   </children>
+</GridPane>
